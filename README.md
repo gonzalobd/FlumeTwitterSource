@@ -13,7 +13,7 @@ and move it to /usr/lib/flume-ng/lib:
          mvn package
          cp flume-sources-1.0-SNAPSHOT.jar  /usr/lib/flume-ng/lib/
  
- # Runing.
+# Runing
  
  Then we have to go to our flume directory copy our twitter.conf in /conf and run the following shell command:
  
