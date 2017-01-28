@@ -2,7 +2,7 @@
 Fetch data from Twitter using flume. It will be sent to a Kafka topic and to a HDFS data warehouse.
 # Previous Steps
 First we need to download the latest version of twitter4j in http://mvnrepository.com/artifact/org.twitter4j/twitter4j-stream
-and move it to /usr/lib/flume-ng/lib. At linux shell:
+and move it to /usr/lib/flume-ng/lib. At our linux shell:
 
          > cd /tmp
          > mkdir flume
