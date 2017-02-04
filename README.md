@@ -39,5 +39,7 @@ and move it to /usr/lib/flume-ng/lib. At our linux shell:
  
            > flume-ng agent --conf conf --conf-file twitter.conf --name twitter -Dflume.root.logger=INFO,console
 
- 
- 
+Now we can check HDFS and open a kafka console consumer to check the tweets:
+
+           > bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic twitter --from-beginning
+           > hadoop fs -lf /flume/eventsTwitter/
