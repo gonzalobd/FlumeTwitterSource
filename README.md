@@ -23,11 +23,21 @@ and move it to /usr/lib/flume-ng/lib. At our linux shell:
           > hadoop fs -mkdir /flume
           > hadoop fs -mkdir /flume/eventsTwitter
           > hadoop fs -chmod -R 777 /flume/
+          > hadoop fs -chmod -R 777 /flume/eventsTwitter
  
- And finally we have to start zookeeper and kafka services and create the topic "twitter".
+ To get access to Twitter source we need an account on https://apps.twitter.com/. In "Create a new App" we get our access tokens needed.
+ And finally we have to start zookeeper and kafka services and create the topic "twitter". In our kafka folder:
  
+          
+          > bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
+          > bin/kafka-server-start.sh -daemon config/server.properties
+          > bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic twitter
+
 # Runing
  
  Then we have to go to our flume directory copy our twitter.conf in /conf and run the following shell command:
+ 
+           > flume-ng agent --conf conf --conf-file twitter.conf --name twitter -Dflume.root.logger=INFO,console
+
  
  
