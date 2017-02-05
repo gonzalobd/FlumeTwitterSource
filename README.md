@@ -33,7 +33,7 @@ and move it to /usr/lib/flume-ng/lib. At our linux shell:
           > bin/kafka-server-start.sh -daemon config/server.properties
           > bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic twitter
 
-# Runing
+# Running
  
  Then we have to go to our flume directory copy our twitter.conf in /conf and run the following shell command:
  
